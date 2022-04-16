@@ -23,7 +23,7 @@ while loop:
 
         while inner_loop < counter:
 
-            attempt = input("Unesi rec:")
+            attempt = input("Unesi rec:").lower()
             
             if len(attempt) != 5:
                 print(obrada_greske("invalid length"))
@@ -34,12 +34,12 @@ while loop:
             for i in range(word.__len__()):
                 if attempt[i] == word[i]:
                     counter-=1
-                    output = output + Back.RED + attempt[i] + Back.RESET
+                    output = output + Back.RED + attempt[i].upper() + Back.RESET
                 elif attempt[i] in word[i]:
-                    output = output + Back.YELLOW + attempt[i] + Back.RESET
+                    output = output + Back.YELLOW + attempt[i].upper() + Back.RESET
                     counter-=1
                 else:
-                    output = output + attempt[i] + Back.RESET
+                    output = output + attempt[i].upper() + Back.RESET
                     counter-=1
             print(output)
             
@@ -47,4 +47,4 @@ while loop:
                 print("Cestitamo domacine, vidim gleda se slagalica")
                 quit()
 
-        print("Izgubio si tacna rec je bila:", word)
+        print("Izgubio si tacna rec je bila:", word.upper())
