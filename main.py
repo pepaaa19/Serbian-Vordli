@@ -10,6 +10,7 @@ loop = True
 word_list = ['farsu', 'jedan', 'uspeh', 'forda', 'istoj', 'kojoj', 'dobri', 'svejk', 'jedna', 'farsa']
 
 while loop:
+    print('*****************')
     print(Back.WHITE + Fore.BLACK + "Zelis li da igras? (da/ne)" + Style.RESET_ALL)
     command = input()
     if command == "ne":
@@ -17,13 +18,15 @@ while loop:
     elif command == "da":
         inner_loop = 0
         word = random.choice(word_list)
+        print('*****************')
         print("Unesi rec, ali pazi rec mora biti 5 slova ili vise!")
-
+        print('*****************')
         counter = 29
 
         while inner_loop < counter:
-
+            
             attempt = input("Unesi rec:").lower()
+            
             
             if len(attempt) != 5:
                 print(obrada_greske("invalid length"))
@@ -41,8 +44,9 @@ while loop:
                 else:
                     output = output + attempt[i].upper() + Back.RESET
                     counter-=1
+            print('*****************')
             print(output)
-            
+            print('*****************')
             if word == attempt:
                 print("Cestitamo domacine, vidim gleda se slagalica")
                 quit()
